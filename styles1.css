@@ -1,0 +1,70 @@
+html{
+    scroll-behavior:smooth;
+}
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background-color: #ff7a00;
+}
+
+/* ===================================
+   Custom Hamburger / Close Button
+   =================================== */
+
+.custom-toggler{
+    border:none;
+    box-shadow:none !important;
+    padding:8px;
+    width:50px;
+    height:50px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:6px;
+    background:transparent;
+}
+
+/* Strong colours inspired by logo palette */
+.custom-toggler span{
+    display:block;
+    width:30px;
+    height:4px;
+    border-radius:10px;
+    background:linear-gradient(
+        90deg,
+        #ff7a00,
+        #ff9500
+    );
+    transition:all 0.35s ease;
+}
+
+/* Open state → X */
+.custom-toggler[aria-expanded="true"] span:nth-child(1){
+    transform:translateY(10px) rotate(45deg);
+}
+
+.custom-toggler[aria-expanded="true"] span:nth-child(2){
+    opacity:0;
+    transform:scaleX(0);
+}
+
+.custom-toggler[aria-expanded="true"] span:nth-child(3){
+    transform:translateY(-10px) rotate(-45deg);
+}
+
+/* Hover effect */
+.custom-toggler:hover span{
+    filter:brightness(1.1);
+}
+
+/* Remove Bootstrap default icon */
+.navbar-toggler-icon{
+    display:none;
+}
+
+.custom-navbar{
+    background-color:#ff7a00;
+}

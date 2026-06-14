@@ -1,0 +1,142 @@
+.delivery-card{
+    background:white;
+
+    padding:35px 20px;
+
+    border-radius:20px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+
+    transition:all 0.3s ease;
+
+    height:100%;
+}
+
+.delivery-card:hover{
+    transform:translateY(-8px);
+
+    box-shadow:0 12px 30px rgba(0,0,0,0.12);
+}
+
+.delivery-icon{
+    font-size:3rem;
+
+    margin-bottom:15px;
+}
+
+.delivery-card h5{
+    margin:0;
+
+    font-weight:600;
+}
+
+.deliver-scroll{
+    display:flex;
+    gap:20px;
+
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+
+    padding:20px 10px;
+
+    scroll-behavior:smooth;
+}
+
+/* Hide scrollbar */
+.deliver-scroll::-webkit-scrollbar{
+    display:none;
+}
+
+.deliver-card{
+    min-width:280px;
+    flex:0 0 auto;
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+
+    scroll-snap-align:center;
+
+    transition:0.3s;
+}
+
+.deliver-card:hover{
+    transform:translateY(-8px);
+}
+
+/* Navigation buttons */
+.deliver-nav button{
+    border:none;
+    background:#00A651;
+    color:white;
+
+    padding:8px 14px;
+    margin:5px;
+
+    border-radius:20px;
+
+    font-size:0.9rem;
+
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.deliver-nav button:hover{
+    background:#008f45;
+}
+
+.deliver-scroll-wrapper{
+    overflow:hidden;
+    position:relative;
+}
+
+.deliver-track {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    animation: scrollLoop 25s linear infinite;
+}
+
+/* ADD THIS — this is what clips the overflowing track */
+#deliverTrack {
+    overflow: hidden;
+}
+
+.deliver-card{
+    min-width:260px;
+    flex:0 0 auto;
+
+    background:white;
+    padding:30px;
+
+    border-radius:20px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+
+    text-align:center;
+}
+
+.deliver-icon {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+/* Smooth infinite scroll */
+@keyframes scrollLoop{
+    0%{
+        transform:translateX(0);
+    }
+    100%{
+        transform:translateX(-50%);
+    }
+}
+
+/* Pause on hover (important UX) */
+.deliver-scroll-wrapper:hover .deliver-track{
+    animation-play-state:paused;
+}

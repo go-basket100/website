@@ -1,0 +1,136 @@
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero-section{
+    position:relative;
+    height:90vh;
+    overflow:hidden;
+    color:white;
+}
+
+/* =========================
+   BACKGROUND SLIDESHOW
+========================= */
+
+.hero-bg{
+    position:absolute;
+    inset:0;
+    z-index:0;
+}
+
+.bg{
+    position:absolute;
+    inset:0;
+
+    background-size:cover;
+    background-position:center;
+
+    opacity:0;
+    transform:scale(1.2);
+
+    animation:zoomFade 18s infinite;
+}
+
+.bg1{
+    background-image:url('images/bg8.jpg');
+    animation-delay:0s;
+}
+
+.bg2{
+    background-image:url('images/bg7.jpg');
+    animation-delay:6s;
+}
+
+.bg3{
+    background-image:url('images/bg13.jpg');
+    animation-delay:12s;
+}
+
+@keyframes zoomFade{
+
+    0%{
+        opacity:0;
+        transform:scale(1.2);
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    40%{
+        opacity:1;
+    }
+
+    50%{
+        opacity:0;
+        transform:scale(1);
+    }
+
+    100%{
+        opacity:0;
+        transform:scale(1.2);
+    }
+}
+
+/* =========================
+   OVERLAY
+========================= */
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+
+    background: rgba(0, 0, 0, 0.249);
+
+    backdrop-filter:blur(1px);
+
+    z-index:1;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.hero-slider{
+    position:relative;
+    z-index:2;
+}
+
+.hero-slide{
+    display:none;
+    animation:slideIn 0.8s ease;
+}
+
+.hero-slide.active{
+    display:block;
+}
+
+@keyframes slideIn{
+
+    from{
+        opacity:0;
+        transform:translateX(50px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+.hero-content-box{
+    max-width: 600px;
+    padding: 40px;
+    /* border-radius: 20px; */
+
+    background: rgba(23, 114, 47, 0.67);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255,255,255,0.15);
+
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+}
