@@ -2,7 +2,7 @@ html{
     scroll-behavior:smooth;
 }
 
-header{
+nav.navbar {
     position:sticky;
     top:0;
     z-index:1000;
@@ -67,4 +67,35 @@ header{
 
 .custom-navbar{
     background-color:#ff7a00;
+}
+
+/* =========================
+   Sticky Footer (Fixed Bottom)
+   ========================= */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    border-top: 1px solid #333;
+    z-index: 1000;
+}
+
+/* Remove this — it was the problem */
+/* .footer p { position: fixed; } */
+
+.footer p {
+    margin: 0;
+    letter-spacing: 0.3px;
+}
+
+/* Optional: prevent content hiding behind footer */
+body {
+    padding-bottom: 60px;
 }
