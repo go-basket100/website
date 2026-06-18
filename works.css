@@ -1,0 +1,102 @@
+/* Process Section */
+.process-section{
+    background:#f7f8f4;
+}
+
+.process-eyebrow{
+    display:inline-block;
+    font-size:.75rem;
+    font-weight:700;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:#00A651;
+    margin-bottom:10px;
+}
+
+.process-heading{
+    font-size:clamp(1.8rem,4vw,2.6rem);
+    color:#1a1a2e;
+    letter-spacing:-0.02em;
+}
+
+/* Step Card */
+.process-card{
+    position:relative;
+
+    background:#fff;
+
+    padding:32px 24px 24px;
+
+    border-radius:18px;
+
+    height:100%;
+
+    text-align:center;
+
+    box-shadow:0 2px 12px rgba(0,0,0,.06);
+
+    transition:transform .3s ease,
+               box-shadow .3s ease;
+}
+
+.process-card:hover{
+    transform:translateY(-6px);
+
+    box-shadow:0 12px 28px rgba(0,0,0,.1);
+}
+
+/* Number Circle */
+.process-number{
+    width:56px;
+    height:56px;
+
+    margin:0 auto 20px;
+
+    border-radius:50%;
+
+    background:#00A651;
+
+    color:#fff;
+
+    font-weight:700;
+    font-size:1.2rem;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.process-card h5{
+    font-weight:700;
+    color:#1a1a2e;
+    margin-bottom:12px;
+}
+
+.process-card p{
+    margin:0;
+    color:#6c757d;
+    line-height:1.7;
+    font-size:.95rem;
+}
+
+/* Desktop Connector Line */
+@media (min-width:992px){
+
+    .process-card::after{
+        content:"";
+
+        position:absolute;
+
+        top:56px;
+        right:-24px;
+
+        width:48px;
+        height:2px;
+
+        background:#d8e7dc;
+    }
+
+    .col-lg:last-child .process-card::after{
+        display:none;
+    }
+}
