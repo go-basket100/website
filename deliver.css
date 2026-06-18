@@ -1,142 +1,121 @@
-.delivery-card{
-    background:white;
-
-    padding:35px 20px;
-
-    border-radius:20px;
-
-    box-shadow:0 5px 20px rgba(0,0,0,0.08);
-
-    transition:all 0.3s ease;
-
-    height:100%;
-}
-
-.delivery-card:hover{
-    transform:translateY(-8px);
-
-    box-shadow:0 12px 30px rgba(0,0,0,0.12);
-}
-
-.delivery-icon{
-    font-size:3rem;
-
-    margin-bottom:15px;
-}
-
-.delivery-card h5{
-    margin:0;
-
-    font-weight:600;
-}
-
-.deliver-scroll{
-    display:flex;
-    gap:20px;
-
-    overflow-x:auto;
-    scroll-snap-type:x mandatory;
-
-    padding:20px 10px;
-
-    scroll-behavior:smooth;
-}
-
-/* Hide scrollbar */
-.deliver-scroll::-webkit-scrollbar{
-    display:none;
-}
-
-.deliver-card{
-    min-width:280px;
-    flex:0 0 auto;
-
-    background:white;
-
-    padding:30px;
-
-    border-radius:20px;
-
-    box-shadow:0 5px 20px rgba(0,0,0,0.08);
-
-    scroll-snap-align:center;
-
-    transition:0.3s;
-}
-
-.deliver-card:hover{
-    transform:translateY(-8px);
-}
-
-/* Navigation buttons */
-.deliver-nav button{
-    border:none;
-    background:#00A651;
-    color:white;
-
-    padding:8px 14px;
-    margin:5px;
-
-    border-radius:20px;
-
-    font-size:0.9rem;
-
-    cursor:pointer;
-    transition:0.3s;
-}
-
-.deliver-nav button:hover{
-    background:#008f45;
-}
-
 .deliver-scroll-wrapper{
     overflow:hidden;
     position:relative;
+    padding:20px 0;
 }
 
-.deliver-track {
-    display: flex;
-    gap: 20px;
-    width: max-content;
-    animation: scrollLoop 25s linear infinite;
+.deliver-track{
+    display:flex;
+    gap:25px;
+    width:max-content;
+    animation:scrollLoop 30s linear infinite;
 }
 
-/* ADD THIS — this is what clips the overflowing track */
-#deliverTrack {
-    overflow: hidden;
+.deliver-scroll-wrapper:hover .deliver-track{
+    animation-play-state:paused;
 }
 
 .deliver-card{
-    min-width:260px;
+    width:280px;
+    height:320px;
     flex:0 0 auto;
+    perspective:1000px;
+}
 
-    background:white;
-    padding:30px;
+.deliver-inner{
+    width:100%;
+    height:100%;
+    position:relative;
+
+    transform-style:preserve-3d;
+    transition:transform .8s ease;
+}
+
+/* Desktop hover */
+.deliver-card:hover .deliver-inner{
+    transform:rotateY(180deg);
+}
+
+/* Mobile click */
+.deliver-card.flipped .deliver-inner{
+    transform:rotateY(180deg);
+}
+
+.deliver-front,
+.deliver-back{
+    position:absolute;
+    width:100%;
+    height:100%;
+
+    background:#fff;
 
     border-radius:20px;
 
-    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    backface-visibility:hidden;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
 
     text-align:center;
+
+    padding:25px;
 }
 
-.deliver-icon {
-    width: 60px;
-    height: 60px;
-    object-fit: contain;
+.deliver-front h5,
+.deliver-back h5{
+    margin-top:20px;
+    margin-bottom:20px;
+    font-weight:700;
 }
 
-/* Smooth infinite scroll */
+.deliver-back{
+    transform:rotateY(180deg);
+}
+
+.deliver-back p{
+    color:#666;
+    line-height:1.6;
+}
+
+.deliver-icon{
+    width:80px;
+    height:80px;
+    object-fit:contain;
+}
+
+.see-more-btn{
+    border:none;
+
+    background:#00A651;
+    color:white;
+
+    padding:10px 24px;
+
+    border-radius:30px;
+
+    font-size:.9rem;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.see-more-btn:hover{
+    background:#008b44;
+}
+
 @keyframes scrollLoop{
-    0%{
+    from{
         transform:translateX(0);
     }
-    100%{
+
+    to{
         transform:translateX(-50%);
     }
-}
-
-/* Pause on hover (important UX) */
-.deliver-scroll-wrapper:hover .deliver-track{
-    animation-play-state:paused;
 }

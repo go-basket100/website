@@ -45,7 +45,7 @@ function nextSlide(){
     showSlide(currentSlide);
 }
 
-setInterval(nextSlide, 5000);
+setInterval(nextSlide, 10000);
 
 
 function scrollToCard(index){
